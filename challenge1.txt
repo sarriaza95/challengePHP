@@ -1,0 +1,25 @@
+Resume:
+
+Initializes the $items array to store the processed items.
+Initialize flags $sp and $cd to verify that the critical item is found and if an item is marked as deleted.
+Start the $ext_p process to save the extension device groups.
+First Loop (Extension Features):
+
+Iterates over each expansion item in the $ext array and fills the $ext_p array with value IDs as keys and values ​​as quantities.
+Second loop (command objects): .
+
+Iterates over each item in sequence ($o['items']['data']).
+Processes each item and orders the quantity or symbol to be deleted based on the circumstances of extension items, special item, and incomparable items.
+Add the processed item to the $items array.
+Major Process Changes:
+
+If the master product is not found ($sp is false), $items adds a master product of 1 to the array.
+The rest of the line items:
+
+It recreates any remaining extension items in $ext_p and adds them to the $items array, skipping those less than 1 in size.
+return:
+
+Returns the processed $items array.
+The overall purpose of the function seems to be to process orders ($o['items']['data']) with extension items ($ext) and main item ($p) 
+Its purpose is a modified list ($items) with quantities and flags deleted based on certain conditions ) are to be created. 
+The program combines the main item, expansion item, and orders into one consistent result.
